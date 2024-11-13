@@ -24,5 +24,11 @@ public class CoffeeController {
     public Coffee createNewCoffee(@RequestBody Coffee coffee){
 
         Coffee createCoffee = new Coffee();
+
+        createCoffee.setName(coffee.getName());
+        createCoffee.setPrice(coffee.getPrice());
+
+        return coffeeRepository.save(createCoffee);
+
     }
 }
